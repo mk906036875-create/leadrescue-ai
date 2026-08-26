@@ -1,45 +1,16 @@
 
 /* =========================================================
-   LEADRESCUE AI
-   Premium Sales Demo — Frontend Demo Logic
+   LEADRESCUE AI — V2
+   Interactive Sales Demo
    ========================================================= */
 
 "use strict";
 
-
 /* =========================================================
-   1. ELEMENTS
+   DATA
    ========================================================= */
 
-const simulateLeadBtn = document.getElementById("simulateLead");
-const openDemoBtn = document.getElementById("openDemo");
-const salesDemoBtn = document.getElementById("salesDemo");
-
-const demoModal = document.getElementById("demoModal");
-const closeModalBtn = document.getElementById("closeModal");
-
-const demoForm = document.getElementById("demoForm");
-const successMessage = document.getElementById("successMessage");
-
-const leadFeed = document.getElementById("leadFeed");
-
-const totalLeadsEl = document.getElementById("totalLeads");
-const atRiskEl = document.getElementById("atRisk");
-const totalRecoveredEl = document.getElementById("totalRecovered");
-const totalAppointmentsEl = document.getElementById("totalAppointments");
-
-const potentialRevenueEl =
-  document.getElementById("potentialRevenue");
-
-const recoveredRevenueEl =
-  document.getElementById("recoveredRevenue");
-
-
-/* =========================================================
-   2. DEMO DATA
-   ========================================================= */
-
-const dashboardData = {
+const state = {
   leads: 247,
   risk: 31,
   recovered: 86,
@@ -48,251 +19,234 @@ const dashboardData = {
   recoveredRevenue: 24680
 };
 
-
-/* =========================================================
-   3. SAMPLE LEADS
-   ========================================================= */
-
 const sampleLeads = [
-
   {
     name: "Alex Morgan",
     initials: "AM",
     enquiry: "Website enquiry",
     value: 1450
   },
-
   {
     name: "Taylor Reed",
     initials: "TR",
     enquiry: "Missed call recovered",
     value: 900
   },
-
   {
     name: "Chris Evans",
     initials: "CE",
     enquiry: "Appointment request",
     value: 2100
   },
-
   {
     name: "Jamie Patel",
     initials: "JP",
     enquiry: "Facebook enquiry",
     value: 750
   },
-
   {
     name: "Morgan Wilson",
     initials: "MW",
     enquiry: "Online consultation",
     value: 1250
   },
-
   {
     name: "Daniel Carter",
     initials: "DC",
     enquiry: "Missed enquiry",
     value: 1800
   }
-
 ];
 
-
 /* =========================================================
-   4. FORMAT CURRENCY
+   ELEMENTS
    ========================================================= */
 
-function formatCurrency(number) {
+const $ = id => document.getElementById(id);
 
-  return "$" + Number(number).toLocaleString("en-US");
+const simulateLeadBtn = $("simulateLead");
+const openDemoBtn = $("openDemo");
+const salesDemoBtn = $("salesDemo");
 
-}
+const modal = $("demoModal");
+const closeModalBtn = $("closeModal");
 
+const demoForm = $("demoForm");
+const successMessage = $("successMessage");
+
+const leadFeed = $("leadFeed");
+
+const totalLeads = $("totalLeads");
+const atRisk = $("atRisk");
+const totalRecovered = $("totalRecovered");
+const totalAppointments = $("totalAppointments");
+
+const potentialRevenue = $("potentialRevenue");
+const recoveredRevenue = $("recoveredRevenue");
+const heroRecovered = $("heroRecovered");
+
+const leadSlider = $("leadSlider");
+const valueSlider = $("valueSlider");
+const recoverySlider = $("recoverySlider");
+
+const leadSliderValue = $("leadSliderValue");
+const valueSliderValue = $("valueSliderValue");
+const recoverySliderValue = $("recoverySliderValue");
+
+const roiRevenue = $("roiRevenue");
+const roiMultiple = $("roiMultiple");
 
 /* =========================================================
-   5. UPDATE DASHBOARD
+   FORMATTERS
+   ========================================================= */
+
+function money(value) {
+  return "$" + Math.round(value).toLocaleString("en-US");
+}
+
+function number(value) {
+  return Math.round(value).toLocaleString("en-US");
+}
+
+/* =========================================================
+   DASHBOARD UPDATE
    ========================================================= */
 
 function updateDashboard() {
 
-  totalLeadsEl.textContent =
-    dashboardData.leads.toLocaleString("en-US");
-
-  atRiskEl.textContent =
-    dashboardData.risk.toLocaleString("en-US");
-
-  totalRecoveredEl.textContent =
-    dashboardData.recovered.toLocaleString("en-US");
-
-  totalAppointmentsEl.textContent =
-    dashboardData.appointments.toLocaleString("en-US");
-
-  potentialRevenueEl.textContent =
-    formatCurrency(dashboardData.potentialRevenue);
-
-  recoveredRevenueEl.textContent =
-    formatCurrency(dashboardData.recoveredRevenue);
-
-}
-
-
-/* =========================================================
-   6. OPEN DEMO MODAL
-   ========================================================= */
-
-function openDemoModal() {
-
-  demoModal.classList.add("show");
-
-  document.body.style.overflow = "hidden";
-
-  if (successMessage) {
-    successMessage.classList.remove("show");
+  if (totalLeads) {
+    totalLeads.textContent = number(state.leads);
   }
 
-  if (demoForm) {
-    demoForm.style.display = "grid";
+  if (atRisk) {
+    atRisk.textContent = number(state.risk);
   }
 
-}
-
-
-/* =========================================================
-   7. CLOSE DEMO MODAL
-   ========================================================= */
-
-function closeDemoModal() {
-
-  demoModal.classList.remove("show");
-
-  document.body.style.overflow = "";
-
-}
-
-
-/* =========================================================
-   8. DEMO BUTTON EVENTS
-   ========================================================= */
-
-if (openDemoBtn) {
-
-  openDemoBtn.addEventListener(
-    "click",
-    openDemoModal
-  );
-
-}
-
-
-if (salesDemoBtn) {
-
-  salesDemoBtn.addEventListener(
-    "click",
-    openDemoModal
-  );
-
-}
-
-
-if (closeModalBtn) {
-
-  closeModalBtn.addEventListener(
-    "click",
-    closeDemoModal
-  );
-
-}
-
-
-/* =========================================================
-   9. CLOSE MODAL BY CLICKING OUTSIDE
-   ========================================================= */
-
-if (demoModal) {
-
-  demoModal.addEventListener(
-    "click",
-    function (event) {
-
-      if (event.target === demoModal) {
-
-        closeDemoModal();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   10. CLOSE WITH ESC KEY
-   ========================================================= */
-
-document.addEventListener(
-  "keydown",
-  function (event) {
-
-    if (
-      event.key === "Escape" &&
-      demoModal.classList.contains("show")
-    ) {
-
-      closeDemoModal();
-
-    }
-
+  if (totalRecovered) {
+    totalRecovered.textContent = number(state.recovered);
   }
-);
 
+  if (totalAppointments) {
+    totalAppointments.textContent =
+      number(state.appointments);
+  }
+
+  if (potentialRevenue) {
+    potentialRevenue.textContent =
+      money(state.potentialRevenue);
+  }
+
+  if (recoveredRevenue) {
+    recoveredRevenue.textContent =
+      money(state.recoveredRevenue);
+  }
+
+  if (heroRecovered) {
+    heroRecovered.textContent =
+      number(state.recovered);
+  }
+}
 
 /* =========================================================
-   11. CREATE NEW LEAD
+   ROI CALCULATOR
+   ========================================================= */
+
+function calculateROI() {
+
+  if (!leadSlider || !valueSlider || !recoverySlider) {
+    return;
+  }
+
+  const leads = Number(leadSlider.value);
+  const customerValue = Number(valueSlider.value);
+  const recoveryRate = Number(recoverySlider.value);
+
+  const recoveredCustomers =
+    leads * (recoveryRate / 100);
+
+  const monthlyRevenue =
+    recoveredCustomers * customerValue;
+
+  const multiple =
+    monthlyRevenue / 2997;
+
+  leadSliderValue.textContent =
+    number(leads);
+
+  valueSliderValue.textContent =
+    money(customerValue);
+
+  recoverySliderValue.textContent =
+    recoveryRate + "%";
+
+  roiRevenue.textContent =
+    money(monthlyRevenue);
+
+  roiMultiple.textContent =
+    multiple.toFixed(1) +
+    "× potential value";
+}
+
+/* =========================================================
+   ROI SLIDER EVENTS
+   ========================================================= */
+
+[
+  leadSlider,
+  valueSlider,
+  recoverySlider
+].forEach(slider => {
+
+  if (slider) {
+    slider.addEventListener(
+      "input",
+      calculateROI
+    );
+  }
+
+});
+
+/* =========================================================
+   CREATE RANDOM LEAD
    ========================================================= */
 
 function createLead() {
 
-  const randomLead =
+  const source =
     sampleLeads[
       Math.floor(
         Math.random() * sampleLeads.length
       )
     ];
 
+  const variation =
+    Math.floor(Math.random() * 500);
+
   return {
-
-    name: randomLead.name,
-
-    initials: randomLead.initials,
-
-    enquiry: randomLead.enquiry,
-
-    value:
-      randomLead.value +
-      Math.floor(Math.random() * 600)
-
+    name: source.name,
+    initials: source.initials,
+    enquiry: source.enquiry,
+    value: source.value + variation
   };
-
 }
 
-
 /* =========================================================
-   12. ADD LEAD TO FEED
+   ADD LEAD TO FEED
    ========================================================= */
 
 function addLeadToFeed(lead) {
 
-  const leadRow =
+  if (!leadFeed) {
+    return;
+  }
+
+  const row =
     document.createElement("div");
 
-  leadRow.className =
+  row.className =
     "lead-row hot";
 
-  leadRow.innerHTML = `
-
+  row.innerHTML = `
     <div class="lead-avatar">
       ${lead.initials}
     </div>
@@ -310,11 +264,11 @@ function addLeadToFeed(lead) {
       <div class="tags">
 
         <span class="hot-tag">
-          NEW LEAD
+          AI RESPONDED
         </span>
 
         <span>
-          AI REPLY SENT
+          RECOVERED
         </span>
 
       </div>
@@ -322,90 +276,69 @@ function addLeadToFeed(lead) {
     </div>
 
     <strong class="lead-value">
-      ${formatCurrency(lead.value)}
+      ${money(lead.value)}
     </strong>
-
   `;
 
+  row.style.opacity = "0";
+  row.style.transform =
+    "translateY(-10px)";
 
-  leadFeed.prepend(leadRow);
+  leadFeed.prepend(row);
 
+  requestAnimationFrame(() => {
 
-  /* Entry animation */
+    row.style.transition =
+      "all .35s ease";
 
-  leadRow.style.opacity = "0";
+    row.style.opacity = "1";
 
-  leadRow.style.transform =
-    "translateY(-12px)";
-
-
-  requestAnimationFrame(function () {
-
-    leadRow.style.transition =
-      "all 0.35s ease";
-
-    leadRow.style.opacity = "1";
-
-    leadRow.style.transform =
+    row.style.transform =
       "translateY(0)";
-
   });
-
-
-  /* Keep feed clean */
 
   const rows =
     leadFeed.querySelectorAll(".lead-row");
 
-  if (rows.length > 7) {
-
+  if (rows.length > 6) {
     rows[rows.length - 1].remove();
-
   }
-
 }
 
-
 /* =========================================================
-   13. SIMULATE LEAD
+   SIMULATE LEAD
    ========================================================= */
 
 function simulateLead() {
 
   const lead = createLead();
 
+  state.leads += 1;
 
-  dashboardData.leads += 1;
+  state.recovered += 1;
 
-  dashboardData.recovered += 1;
+  state.risk =
+    Math.max(0, state.risk - 1);
 
-  dashboardData.risk =
-    Math.max(
-      0,
-      dashboardData.risk - 1
-    );
+  state.appointments += 1;
 
-
-  dashboardData.potentialRevenue +=
+  state.potentialRevenue +=
     lead.value;
 
-
-  dashboardData.recoveredRevenue +=
+  state.recoveredRevenue +=
     lead.value;
-
 
   addLeadToFeed(lead);
 
   updateDashboard();
 
-
   showToast(
-    "AI recovered a new lead: " +
-    lead.name
+    "✓ AI recovered " +
+    lead.name +
+    " — " +
+    money(lead.value)
   );
-
 }
-
 
 if (simulateLeadBtn) {
 
@@ -416,62 +349,153 @@ if (simulateLeadBtn) {
 
 }
 
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+function openModal() {
+
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.add("show");
+
+  document.body.style.overflow =
+    "hidden";
+
+  if (demoForm) {
+    demoForm.style.display =
+      "grid";
+  }
+
+  if (successMessage) {
+    successMessage.classList.remove(
+      "show"
+    );
+  }
+}
+
+function closeModal() {
+
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.remove("show");
+
+  document.body.style.overflow =
+    "";
+}
+
+if (openDemoBtn) {
+  openDemoBtn.addEventListener(
+    "click",
+    openModal
+  );
+}
+
+if (salesDemoBtn) {
+  salesDemoBtn.addEventListener(
+    "click",
+    openModal
+  );
+}
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener(
+    "click",
+    closeModal
+  );
+}
 
 /* =========================================================
-   14. DEMO FORM SUBMISSION
+   MODAL OUTSIDE CLICK
+   ========================================================= */
+
+if (modal) {
+
+  modal.addEventListener(
+    "click",
+    event => {
+
+      if (event.target === modal) {
+        closeModal();
+      }
+
+    }
+  );
+}
+
+/* =========================================================
+   ESC KEY
+   ========================================================= */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape" &&
+      modal &&
+      modal.classList.contains("show")
+    ) {
+      closeModal();
+    }
+
+  }
+);
+
+/* =========================================================
+   DEMO FORM
    ========================================================= */
 
 if (demoForm) {
 
   demoForm.addEventListener(
     "submit",
-    function (event) {
+    event => {
 
       event.preventDefault();
 
-
-      const formData =
-        new FormData(demoForm);
-
-
-      const businessName =
-        formData.get(
-          "business"
+      const button =
+        demoForm.querySelector(
+          "button[type='submit']"
         );
 
+      if (button) {
 
-      demoForm.style.display =
-        "none";
+        button.textContent =
+          "Processing...";
 
+        button.disabled = true;
+      }
 
-      successMessage.classList.add(
-        "show"
-      );
+      setTimeout(() => {
 
+        demoForm.style.display =
+          "none";
 
-      showToast(
-        "Demo request captured successfully."
-      );
+        if (successMessage) {
 
+          successMessage.classList.add(
+            "show"
+          );
 
-      /*
-        IMPORTANT:
+        }
 
-        This is frontend demo behavior only.
+        showToast(
+          "✓ Demo request captured"
+        );
 
-        To receive real leads, connect this
-        form to your backend, CRM, email,
-        Formspree, Supabase, Firebase, etc.
-      */
+      }, 900);
 
     }
   );
-
 }
 
-
 /* =========================================================
-   15. TOAST NOTIFICATION
+   TOAST
    ========================================================= */
 
 function showToast(message) {
@@ -481,7 +505,6 @@ function showToast(message) {
       "leadrescueToast"
     );
 
-
   if (!toast) {
 
     toast =
@@ -490,97 +513,36 @@ function showToast(message) {
     toast.id =
       "leadrescueToast";
 
-    toast.style.position =
-      "fixed";
-
-    toast.style.right =
-      "22px";
-
-    toast.style.bottom =
-      "22px";
-
-    toast.style.zIndex =
-      "999";
-
-    toast.style.padding =
-      "12px 16px";
-
-    toast.style.border =
-      "1px solid rgba(202,255,61,.25)";
-
-    toast.style.borderRadius =
-      "9px";
-
-    toast.style.background =
-      "#0d1a21";
-
-    toast.style.color =
-      "#caff3d";
-
-    toast.style.fontSize =
-      "10px";
-
-    toast.style.fontWeight =
-      "800";
-
-    toast.style.boxShadow =
-      "0 15px 40px rgba(0,0,0,.45)";
-
-    toast.style.transform =
-      "translateY(15px)";
-
-    toast.style.opacity =
-      "0";
-
-    toast.style.transition =
-      "all .25s ease";
-
     document.body.appendChild(toast);
-
   }
-
 
   toast.textContent =
     message;
 
+  toast.style.opacity =
+    "1";
 
-  requestAnimationFrame(
-    function () {
-
-      toast.style.opacity =
-        "1";
-
-      toast.style.transform =
-        "translateY(0)";
-
-    }
-  );
-
+  toast.style.transform =
+    "translateY(0)";
 
   clearTimeout(
-    window.leadrescueToastTimer
+    window.leadRescueToastTimer
   );
 
+  window.leadRescueToastTimer =
+    setTimeout(() => {
 
-  window.leadrescueToastTimer =
-    setTimeout(
-      function () {
+      toast.style.opacity =
+        "0";
 
-        toast.style.opacity =
-          "0";
+      toast.style.transform =
+        "translateY(12px)";
 
-        toast.style.transform =
-          "translateY(15px)";
-
-      },
-      2800
-    );
-
+    }, 2800);
 }
 
-
 /* =========================================================
-   16. NAVIGATION ACTIVE STATE
+   NAVIGATION
    ========================================================= */
 
 const navItems =
@@ -588,38 +550,31 @@ const navItems =
     ".nav-item"
   );
 
+navItems.forEach(item => {
 
-navItems.forEach(
-  function (item) {
+  item.addEventListener(
+    "click",
+    () => {
 
-    item.addEventListener(
-      "click",
-      function () {
+      navItems.forEach(nav => {
 
-        navItems.forEach(
-          function (nav) {
-
-            nav.classList.remove(
-              "active"
-            );
-
-          }
-        );
-
-
-        item.classList.add(
+        nav.classList.remove(
           "active"
         );
 
-      }
-    );
+      });
 
-  }
-);
+      item.classList.add(
+        "active"
+      );
 
+    }
+  );
+
+});
 
 /* =========================================================
-   17. LIVE AI STATUS EFFECT
+   LIVE STATUS
    ========================================================= */
 
 const liveLabel =
@@ -627,99 +582,72 @@ const liveLabel =
     ".live-label"
   );
 
-
 if (liveLabel) {
 
-  setInterval(
-    function () {
+  setInterval(() => {
+
+    liveLabel.style.opacity =
+      ".45";
+
+    setTimeout(() => {
 
       liveLabel.style.opacity =
-        "0.45";
+        "1";
 
+    }, 300);
 
-      setTimeout(
-        function () {
-
-          liveLabel.style.opacity =
-            "1";
-
-        },
-        350
-      );
-
-    },
-    2400
-  );
-
+  }, 2400);
 }
 
-
 /* =========================================================
-   18. AUTO AI ACTIVITY
+   AUTOMATIC DEMO ACTIVITY
    ========================================================= */
 
 /*
-   Every 18 seconds the demo generates
-   a small simulated AI activity event.
-
-   This makes the sales demo feel alive
-   without pretending it is connected
-   to a real CRM.
+  This is intentionally sample-data activity.
+  It does NOT claim to connect to a real CRM.
 */
 
-setInterval(
-  function () {
+setInterval(() => {
 
-    if (
-      document.visibilityState ===
-      "visible"
-    ) {
+  if (
+    document.visibilityState !==
+    "visible"
+  ) {
+    return;
+  }
 
-      const lead =
-        createLead();
+  const lead =
+    createLead();
 
+  state.leads += 1;
 
-      /*
-        Smaller automatic event.
-      */
+  state.potentialRevenue +=
+    Math.round(lead.value * .25);
 
-      dashboardData.leads += 1;
+  addLeadToFeed(lead);
 
-      dashboardData.potentialRevenue +=
-        Math.floor(
-          lead.value * 0.35
-        );
+  updateDashboard();
 
-
-      addLeadToFeed(
-        lead
-      );
-
-      updateDashboard();
-
-    }
-
-  },
-  18000
-);
-
+}, 18000);
 
 /* =========================================================
-   19. INITIALIZE
+   INITIALIZE
    ========================================================= */
 
 updateDashboard();
 
+calculateROI();
 
 /* =========================================================
-   20. CONSOLE BRANDING
+   CONSOLE
    ========================================================= */
 
 console.log(
   "%c LEADRESCUE AI ",
-  "background:#caff3d;color:#071008;font-weight:900;padding:6px 10px;border-radius:5px;"
+  "background:#caff3d;color:#071008;font-weight:900;padding:7px 12px;border-radius:5px;"
 );
 
 console.log(
-  "AI Lead Recovery Command Center — Demo Environment"
+  "AI Revenue Recovery — Demo Environment"
 );
