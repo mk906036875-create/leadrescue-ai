@@ -1,957 +1,1133 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LEADRESCUE AI | Lead Recovery Command Center</title>
+  <title>LEADRESCUE AI — Recover Lost Revenue</title>
 
   <meta
     name="description"
-    content="LEADRESCUE AI helps businesses recover missed leads, automate follow-ups and convert more enquiries into appointments."
-  />
+    content="LEADRESCUE AI helps businesses recover missed leads, automate follow-ups and convert opportunities into revenue."
+  >
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================= APP ================= -->
-  <div class="app">
+<div class="app">
 
-    <!-- ================= SIDEBAR ================= -->
-    <aside class="sidebar">
+  <!-- ================= SIDEBAR ================= -->
 
-      <div class="brand">
-        <div class="brand-logo">LR</div>
+  <aside class="sidebar">
 
-        <div class="brand-text">
-          <strong>LEADRESCUE</strong>
-          <span>AI COMMAND CENTER</span>
-        </div>
+    <div class="brand">
+
+      <div class="brand-logo">
+        LR
       </div>
 
-      <nav class="navigation">
+      <div class="brand-text">
+        <strong>LEADRESCUE</strong>
+        <span>AI REVENUE ENGINE</span>
+      </div>
 
-        <a href="#overview" class="nav-item active">
-          <span>◉</span>
-          Overview
-        </a>
+    </div>
 
-        <a href="#leads" class="nav-item">
-          <span>⌁</span>
-          Lead Pipeline
-        </a>
 
-        <a href="#recovery" class="nav-item">
-          <span>↻</span>
-          Recovery Engine
-        </a>
+    <nav class="navigation">
 
-        <a href="#appointments" class="nav-item">
-          <span>▣</span>
-          Appointments
-        </a>
+      <a href="#overview" class="nav-item active">
+        <span>◉</span>
+        Command Center
+      </a>
 
-        <a href="#analytics" class="nav-item">
-          <span>◈</span>
-          Revenue Analytics
-        </a>
+      <a href="#recovery" class="nav-item">
+        <span>↻</span>
+        Recovery Engine
+      </a>
 
-      </nav>
+      <a href="#roi" class="nav-item">
+        <span>$</span>
+        ROI Calculator
+      </a>
 
-      <!-- AI STATUS -->
-      <div class="ai-status">
+      <a href="#appointments" class="nav-item">
+        <span>▣</span>
+        Appointments
+      </a>
 
-        <div class="status-title">
-          <span class="status-dot"></span>
-          AI ENGINE ONLINE
+    </nav>
+
+
+    <div class="ai-status">
+
+      <div class="status-title">
+        <span class="status-dot"></span>
+        AI ENGINE ONLINE
+      </div>
+
+      <p>
+        Monitoring leads,
+        follow-ups and recovery
+        opportunities 24/7.
+      </p>
+
+    </div>
+
+
+    <div class="user-profile">
+
+      <div class="user-avatar">
+        LR
+      </div>
+
+      <div>
+        <strong>LEADRESCUE AI</strong>
+        <span>LIVE DEMO</span>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="main">
+
+
+    <!-- ================= TOPBAR ================= -->
+
+    <header class="topbar">
+
+      <div>
+
+        <span class="eyebrow">
+          AI REVENUE RECOVERY PLATFORM
+        </span>
+
+        <h1>
+          Command Center
+        </h1>
+
+      </div>
+
+
+      <div class="top-actions">
+
+        <div class="system-status">
+          <span></span>
+          AI Engine Operational
         </div>
+
+        <button
+          class="btn secondary"
+          id="simulateLead"
+        >
+          + Simulate Missed Lead
+        </button>
+
+        <button
+          class="btn primary"
+          id="openDemo"
+        >
+          Book Private Demo
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section
+      class="hero"
+      id="overview"
+    >
+
+      <div class="hero-content">
+
+        <span class="pill">
+          STOP LOSING HIGH-VALUE LEADS
+        </span>
+
+        <h2>
+          Your next customer
+          <span>shouldn't wait.</span>
+        </h2>
 
         <p>
-          Monitoring inbound leads
-          and follow-ups 24/7.
+          LEADRESCUE AI responds to missed enquiries,
+          qualifies prospects and automates follow-ups
+          before your competitor gets the customer.
         </p>
 
-      </div>
 
-      <!-- USER -->
-      <div class="user-profile">
+        <!-- LIVE FLOW -->
 
-        <div class="user-avatar">
-          MT
-        </div>
+        <div class="recovery-flow">
 
-        <div>
-          <strong>System Admin</strong>
-          <span>LEADRESCUE AI</span>
-        </div>
+          <div class="flow-step">
 
-      </div>
-
-    </aside>
-
-
-    <!-- ================= MAIN ================= -->
-    <main class="main">
-
-      <!-- TOP BAR -->
-      <header class="topbar">
-
-        <div>
-
-          <span class="eyebrow">
-            LIVE BUSINESS INTELLIGENCE
-          </span>
-
-          <h1>
-            Lead Recovery Command Center
-          </h1>
-
-        </div>
-
-
-        <div class="top-actions">
-
-          <div class="system-status">
-            <span></span>
-            All systems operational
-          </div>
-
-          <button
-            class="btn secondary"
-            id="simulateLead"
-          >
-            + Simulate Lead
-          </button>
-
-          <button
-            class="btn primary"
-            id="openDemo"
-          >
-            Book $2,997 Demo
-          </button>
-
-        </div>
-
-      </header>
-
-
-      <!-- ================= HERO ================= -->
-      <section
-        class="hero"
-        id="overview"
-      >
-
-        <div class="hero-content">
-
-          <span class="pill">
-            AI-POWERED REVENUE RECOVERY
-          </span>
-
-          <h2>
-            Turn missed enquiries into
-            <span>recoverable revenue.</span>
-          </h2>
-
-          <p>
-            LEADRESCUE AI detects at-risk leads,
-            responds instantly, automates follow-ups
-            and helps businesses convert more enquiries
-            into appointments.
-          </p>
-
-        </div>
-
-
-        <div class="revenue-card">
-
-          <span>
-            EST. REVENUE RECOVERED
-          </span>
-
-          <strong id="recoveredRevenue">
-            $24,680
-          </strong>
-
-          <small>
-            ↑ 18.4% this month
-          </small>
-
-        </div>
-
-      </section>
-
-
-      <!-- ================= METRICS ================= -->
-      <section class="metrics">
-
-        <div class="metric-card">
-
-          <span class="metric-icon">
-            ◎
-          </span>
-
-          <small>
-            LEADS RECEIVED
-          </small>
-
-          <strong id="totalLeads">
-            247
-          </strong>
-
-          <span class="metric-positive">
-            +14.2%
-          </span>
-
-        </div>
-
-
-        <div class="metric-card">
-
-          <span class="metric-icon">
-            ⚠
-          </span>
-
-          <small>
-            LEADS AT RISK
-          </small>
-
-          <strong id="atRisk">
-            31
-          </strong>
-
-          <span class="metric-warning">
-            Needs attention
-          </span>
-
-        </div>
-
-
-        <div class="metric-card">
-
-          <span class="metric-icon">
-            ↻
-          </span>
-
-          <small>
-            LEADS RECOVERED
-          </small>
-
-          <strong id="totalRecovered">
-            86
-          </strong>
-
-          <span class="metric-positive">
-            +23.7%
-          </span>
-
-        </div>
-
-
-        <div class="metric-card">
-
-          <span class="metric-icon">
-            ▣
-          </span>
-
-          <small>
-            APPOINTMENTS
-          </small>
-
-          <strong id="totalAppointments">
-            42
-          </strong>
-
-          <span class="metric-positive">
-            +16.1%
-          </span>
-
-        </div>
-
-
-        <div class="metric-card">
-
-          <span class="metric-icon">
-            $
-          </span>
-
-          <small>
-            POTENTIAL REVENUE
-          </small>
-
-          <strong id="potentialRevenue">
-            $38,940
-          </strong>
-
-          <span class="metric-positive">
-            +21.8%
-          </span>
-
-        </div>
-
-      </section>
-
-
-      <!-- ================= MAIN GRID ================= -->
-      <section class="dashboard-grid">
-
-
-        <!-- LEAD PIPELINE -->
-        <div
-          class="panel"
-          id="leads"
-        >
-
-          <div class="panel-header">
-
-            <div>
-              <h3>
-                Live Lead Recovery
-              </h3>
-
-              <small>
-                AI activity stream
-              </small>
+            <div class="flow-icon">
+              !
             </div>
 
-            <div class="live-label">
-              <span></span>
-              LIVE
-            </div>
-
-          </div>
-
-
-          <div
-            class="lead-feed"
-            id="leadFeed"
-          >
-
-            <!-- LEAD 1 -->
-            <div class="lead-row hot">
-
-              <div class="lead-avatar">
-                JD
-              </div>
-
-              <div class="lead-info">
-
-                <strong>
-                  Jordan Davis
-                </strong>
-
-                <small>
-                  Dental implant enquiry • 2 min ago
-                </small>
-
-                <div class="tags">
-                  <span class="hot-tag">
-                    HOT LEAD
-                  </span>
-
-                  <span>
-                    AI REPLIED
-                  </span>
-                </div>
-
-              </div>
-
-              <strong class="lead-value">
-                $2,400
-              </strong>
-
-            </div>
-
-
-            <!-- LEAD 2 -->
-            <div class="lead-row">
-
-              <div class="lead-avatar">
-                SK
-              </div>
-
-              <div class="lead-info">
-
-                <strong>
-                  Sarah Kim
-                </strong>
-
-                <small>
-                  Consultation request • 6 min ago
-                </small>
-
-                <div class="tags">
-
-                  <span>
-                    QUALIFIED
-                  </span>
-
-                  <span>
-                    FOLLOW-UP
-                  </span>
-
-                </div>
-
-              </div>
-
-              <strong class="lead-value">
-                $850
-              </strong>
-
-            </div>
-
-
-            <!-- LEAD 3 -->
-            <div class="lead-row">
-
-              <div class="lead-avatar">
-                RM
-              </div>
-
-              <div class="lead-info">
-
-                <strong>
-                  Ryan Miller
-                </strong>
-
-                <small>
-                  Missed call recovered • 11 min ago
-                </small>
-
-                <div class="tags">
-
-                  <span>
-                    RECOVERED
-                  </span>
-
-                  <span>
-                    APPOINTMENT
-                  </span>
-
-                </div>
-
-              </div>
-
-              <strong class="lead-value">
-                $1,200
-              </strong>
-
-            </div>
-
-
-            <!-- LEAD 4 -->
-            <div class="lead-row">
-
-              <div class="lead-avatar">
-                AL
-              </div>
-
-              <div class="lead-info">
-
-                <strong>
-                  Amanda Lee
-                </strong>
-
-                <small>
-                  Website enquiry • 18 min ago
-                </small>
-
-                <div class="tags">
-
-                  <span>
-                    AI REPLIED
-                  </span>
-
-                  <span>
-                    QUALIFYING
-                  </span>
-
-                </div>
-
-              </div>
-
-              <strong class="lead-value">
-                $600
-              </strong>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= RECOVERY ENGINE ================= -->
-        <div
-          class="panel"
-          id="recovery"
-        >
-
-          <div class="panel-header">
-
-            <div>
-
-              <h3>
-                Recovery Engine
-              </h3>
-
-              <small>
-                Automation performance
-              </small>
-
-            </div>
-
-            <strong class="engine-score">
-              94.8%
-            </strong>
-
-          </div>
-
-
-          <!-- CHART -->
-          <div class="chart">
-
-            <div class="bars">
-
-              <div style="height:32%"></div>
-              <div style="height:45%"></div>
-              <div style="height:39%"></div>
-              <div style="height:62%"></div>
-              <div style="height:55%"></div>
-              <div style="height:74%"></div>
-              <div style="height:88%"></div>
-              <div style="height:96%"></div>
-
-            </div>
-
-            <div class="chart-labels">
-
-              <span>MON</span>
-              <span>TUE</span>
-              <span>WED</span>
-              <span>THU</span>
-              <span>FRI</span>
-              <span>SAT</span>
-              <span>SUN</span>
-              <span>TODAY</span>
-
-            </div>
-
-          </div>
-
-
-          <!-- MINI STATS -->
-          <div class="mini-stats">
-
-            <div>
-              <strong>
-                86
-              </strong>
-
-              <small>
-                Recovered
-              </small>
-            </div>
-
-            <div>
-              <strong>
-                61m
-              </strong>
-
-              <small>
-                Time saved
-              </small>
-            </div>
-
-            <div>
-              <strong>
-                3.7x
-              </strong>
-
-              <small>
-                Est. ROI
-              </small>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- ================= BOTTOM GRID ================= -->
-      <section class="bottom-grid">
-
-
-        <!-- APPOINTMENTS -->
-        <div
-          class="panel"
-          id="appointments"
-        >
-
-          <div class="panel-header">
-
-            <div>
-
-              <h3>
-                Upcoming Appointments
-              </h3>
-
-              <small>
-                AI-qualified prospects
-              </small>
-
-            </div>
-
-            <button class="link-button">
-              View all →
-            </button>
-
-          </div>
-
-
-          <div class="appointments">
-
-
-            <div class="appointment">
-
-              <div class="appointment-time">
-                TODAY
-                <strong>
-                  10:30
-                </strong>
-              </div>
-
-              <div class="appointment-info">
-
-                <strong>
-                  Emily Carter
-                </strong>
-
-                <small>
-                  New patient consultation
-                </small>
-
-              </div>
-
-              <span class="confirmed">
-                CONFIRMED
-              </span>
-
-            </div>
-
-
-            <div class="appointment">
-
-              <div class="appointment-time">
-                TODAY
-                <strong>
-                  14:00
-                </strong>
-              </div>
-
-              <div class="appointment-info">
-
-                <strong>
-                  Michael Brown
-                </strong>
-
-                <small>
-                  Implant consultation
-                </small>
-
-              </div>
-
-              <span class="confirmed">
-                CONFIRMED
-              </span>
-
-            </div>
-
-
-            <div class="appointment">
-
-              <div class="appointment-time">
-                TOMORROW
-                <strong>
-                  09:15
-                </strong>
-              </div>
-
-              <div class="appointment-info">
-
-                <strong>
-                  Olivia Wilson
-                </strong>
-
-                <small>
-                  Follow-up consultation
-                </small>
-
-              </div>
-
-              <span class="pending">
-                PENDING
-              </span>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= SALES OFFER ================= -->
-        <div class="panel sales-panel">
-
-          <span class="pill">
-            EARLY ACCESS
-          </span>
-
-          <h3>
-            Deploy your own
             <span>
-              AI Lead Recovery Engine.
+              MISSED LEAD
             </span>
-          </h3>
 
-          <p>
-            Recover missed opportunities, automate
-            follow-ups and turn more enquiries into
-            appointments with LEADRESCUE AI.
-          </p>
+          </div>
 
 
-          <div class="offer-price">
+          <div class="flow-line"></div>
 
+
+          <div class="flow-step">
+
+            <div class="flow-icon">
+              AI
+            </div>
+
+            <span>
+              INSTANT REPLY
+            </span>
+
+          </div>
+
+
+          <div class="flow-line"></div>
+
+
+          <div class="flow-step">
+
+            <div class="flow-icon">
+              ✓
+            </div>
+
+            <span>
+              QUALIFIED
+            </span>
+
+          </div>
+
+
+          <div class="flow-line"></div>
+
+
+          <div class="flow-step">
+
+            <div class="flow-icon">
+              $
+            </div>
+
+            <span>
+              REVENUE
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- REVENUE CARD -->
+
+      <div class="revenue-card">
+
+        <span>
+          ESTIMATED REVENUE RECOVERED
+        </span>
+
+        <strong id="recoveredRevenue">
+          $24,680
+        </strong>
+
+        <small>
+          ↑ 18.4% this month
+        </small>
+
+        <div class="revenue-line"></div>
+
+        <div class="revenue-meta">
+
+          <div>
             <small>
-              IMPLEMENTATION
+              RECOVERED LEADS
             </small>
 
-            <strong>
-              $2,997
-            </strong>
-
-            <span>
-              one-time
-            </span>
-
+            <b id="heroRecovered">
+              86
+            </b>
           </div>
 
+          <div>
+            <small>
+              AVG. VALUE
+            </small>
 
-          <button
-            class="btn primary full"
-            id="salesDemo"
-          >
-            Request Private Demo →
-          </button>
+            <b>
+              $287
+            </b>
+          </div>
 
         </div>
 
-      </section>
+      </div>
+
+    </section>
 
 
-      <!-- ================= ANALYTICS ================= -->
-      <section
-        class="panel analytics-panel"
-        id="analytics"
-      >
+    <!-- ================= METRICS ================= -->
+
+    <section class="metrics">
+
+
+      <div class="metric-card">
+
+        <span class="metric-icon">
+          ◎
+        </span>
+
+        <small>
+          LEADS TODAY
+        </small>
+
+        <strong id="totalLeads">
+          247
+        </strong>
+
+        <span class="metric-positive">
+          +14.2%
+        </span>
+
+      </div>
+
+
+      <div class="metric-card danger-card">
+
+        <span class="metric-icon">
+          ⚠
+        </span>
+
+        <small>
+          LEADS AT RISK
+        </small>
+
+        <strong id="atRisk">
+          31
+        </strong>
+
+        <span class="metric-warning">
+          Recover now
+        </span>
+
+      </div>
+
+
+      <div class="metric-card">
+
+        <span class="metric-icon">
+          ↻
+        </span>
+
+        <small>
+          RECOVERED
+        </small>
+
+        <strong id="totalRecovered">
+          86
+        </strong>
+
+        <span class="metric-positive">
+          +23.7%
+        </span>
+
+      </div>
+
+
+      <div class="metric-card">
+
+        <span class="metric-icon">
+          ▣
+        </span>
+
+        <small>
+          APPOINTMENTS
+        </small>
+
+        <strong id="totalAppointments">
+          42
+        </strong>
+
+        <span class="metric-positive">
+          +16.1%
+        </span>
+
+      </div>
+
+
+      <div class="metric-card">
+
+        <span class="metric-icon">
+          $
+        </span>
+
+        <small>
+          POTENTIAL VALUE
+        </small>
+
+        <strong id="potentialRevenue">
+          $38,940
+        </strong>
+
+        <span class="metric-positive">
+          +21.8%
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= RECOVERY PIPELINE ================= -->
+
+    <section
+      class="dashboard-grid"
+      id="recovery"
+    >
+
+
+      <!-- LIVE RECOVERY -->
+
+      <div class="panel">
 
         <div class="panel-header">
 
           <div>
 
             <h3>
-              Revenue Recovery Intelligence
+              Live Lead Recovery
             </h3>
 
             <small>
-              What LEADRESCUE AI is protecting for your business
+              Watch the AI recover opportunities
             </small>
 
           </div>
 
-          <span class="analytics-badge">
-            AI OPTIMIZED
+          <div class="live-label">
+
+            <span></span>
+
+            LIVE
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="lead-feed"
+          id="leadFeed"
+        >
+
+          <div class="lead-row hot">
+
+            <div class="lead-avatar">
+              JD
+            </div>
+
+            <div class="lead-info">
+
+              <strong>
+                Jordan Davis
+              </strong>
+
+              <small>
+                Missed call • 2 minutes ago
+              </small>
+
+              <div class="tags">
+
+                <span class="hot-tag">
+                  AI RESPONDED
+                </span>
+
+                <span>
+                  HIGH VALUE
+                </span>
+
+              </div>
+
+            </div>
+
+            <strong class="lead-value">
+              $2,400
+            </strong>
+
+          </div>
+
+
+          <div class="lead-row">
+
+            <div class="lead-avatar">
+              SK
+            </div>
+
+            <div class="lead-info">
+
+              <strong>
+                Sarah Kim
+              </strong>
+
+              <small>
+                Website enquiry • 6 minutes ago
+              </small>
+
+              <div class="tags">
+
+                <span>
+                  QUALIFIED
+                </span>
+
+                <span>
+                  FOLLOW-UP
+                </span>
+
+              </div>
+
+            </div>
+
+            <strong class="lead-value">
+              $850
+            </strong>
+
+          </div>
+
+
+          <div class="lead-row">
+
+            <div class="lead-avatar">
+              RM
+            </div>
+
+            <div class="lead-info">
+
+              <strong>
+                Ryan Miller
+              </strong>
+
+              <small>
+                Missed enquiry • 11 minutes ago
+              </small>
+
+              <div class="tags">
+
+                <span>
+                  RECOVERED
+                </span>
+
+                <span>
+                  APPOINTMENT
+                </span>
+
+              </div>
+
+            </div>
+
+            <strong class="lead-value">
+              $1,200
+            </strong>
+
+          </div>
+
+
+          <div class="lead-row">
+
+            <div class="lead-avatar">
+              AL
+            </div>
+
+            <div class="lead-info">
+
+              <strong>
+                Amanda Lee
+              </strong>
+
+              <small>
+                Facebook enquiry • 18 minutes ago
+              </small>
+
+              <div class="tags">
+
+                <span>
+                  AI REPLIED
+                </span>
+
+                <span>
+                  QUALIFYING
+                </span>
+
+              </div>
+
+            </div>
+
+            <strong class="lead-value">
+              $600
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- AI ENGINE -->
+
+      <div class="panel">
+
+        <div class="panel-header">
+
+          <div>
+
+            <h3>
+              AI Recovery Engine
+            </h3>
+
+            <small>
+              Automation performance
+            </small>
+
+          </div>
+
+          <strong class="engine-score">
+            94.8%
+          </strong>
+
+        </div>
+
+
+        <div class="engine-status">
+
+          <div class="engine-circle">
+
+            <span>
+              94.8%
+            </span>
+
+            <small>
+              RECOVERY
+            </small>
+
+          </div>
+
+
+          <div class="engine-list">
+
+            <div>
+              <span class="check">
+                ✓
+              </span>
+
+              Instant response
+
+              <b>
+                42 sec
+              </b>
+            </div>
+
+
+            <div>
+              <span class="check">
+                ✓
+              </span>
+
+              Lead qualification
+
+              <b>
+                AI
+              </b>
+            </div>
+
+
+            <div>
+              <span class="check">
+                ✓
+              </span>
+
+              Automated follow-up
+
+              <b>
+                ON
+              </b>
+            </div>
+
+
+            <div>
+              <span class="check">
+                ✓
+              </span>
+
+              Appointment workflow
+
+              <b>
+                ON
+              </b>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ROI CALCULATOR ================= -->
+
+    <section
+      class="roi-section"
+      id="roi"
+    >
+
+      <div class="panel roi-panel">
+
+        <div class="roi-copy">
+
+          <span class="pill">
+            ROI SIMULATOR
+          </span>
+
+          <h3>
+            What are missed leads
+            costing your business?
+          </h3>
+
+          <p>
+            Adjust the numbers to show a prospect
+            how quickly recovered customers can
+            justify the $2,997 implementation.
+          </p>
+
+        </div>
+
+
+        <div class="roi-controls">
+
+          <label>
+
+            Monthly Leads
+
+            <input
+              type="range"
+              id="leadSlider"
+              min="50"
+              max="1000"
+              value="250"
+            >
+
+            <strong id="leadSliderValue">
+              250
+            </strong>
+
+          </label>
+
+
+          <label>
+
+            Average Customer Value
+
+            <input
+              type="range"
+              id="valueSlider"
+              min="100"
+              max="5000"
+              value="1000"
+              step="50"
+            >
+
+            <strong id="valueSliderValue">
+              $1,000
+            </strong>
+
+          </label>
+
+
+          <label>
+
+            Recovery Rate
+
+            <input
+              type="range"
+              id="recoverySlider"
+              min="1"
+              max="30"
+              value="10"
+            >
+
+            <strong id="recoverySliderValue">
+              10%
+            </strong>
+
+          </label>
+
+        </div>
+
+
+        <div class="roi-result">
+
+          <small>
+            ESTIMATED MONTHLY REVENUE RECOVERED
+          </small>
+
+          <strong id="roiRevenue">
+            $25,000
+          </strong>
+
+          <span>
+            Potential return vs. $2,997 setup
+          </span>
+
+          <b id="roiMultiple">
+            8.3× potential value
+          </b>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= APPOINTMENTS ================= -->
+
+    <section
+      class="bottom-grid"
+      id="appointments"
+    >
+
+
+      <div class="panel">
+
+        <div class="panel-header">
+
+          <div>
+
+            <h3>
+              Upcoming Appointments
+            </h3>
+
+            <small>
+              AI-qualified prospects
+            </small>
+
+          </div>
+
+          <button class="link-button">
+            View all →
+          </button>
+
+        </div>
+
+
+        <div class="appointments">
+
+          <div class="appointment">
+
+            <div class="appointment-time">
+              TODAY
+
+              <strong>
+                10:30
+              </strong>
+            </div>
+
+            <div class="appointment-info">
+
+              <strong>
+                Emily Carter
+              </strong>
+
+              <small>
+                New patient consultation
+              </small>
+
+            </div>
+
+            <span class="confirmed">
+              CONFIRMED
+            </span>
+
+          </div>
+
+
+          <div class="appointment">
+
+            <div class="appointment-time">
+              TODAY
+
+              <strong>
+                14:00
+              </strong>
+
+            </div>
+
+            <div class="appointment-info">
+
+              <strong>
+                Michael Brown
+              </strong>
+
+              <small>
+                Consultation request
+              </small>
+
+            </div>
+
+            <span class="confirmed">
+              CONFIRMED
+            </span>
+
+          </div>
+
+
+          <div class="appointment">
+
+            <div class="appointment-time">
+              TOMORROW
+
+              <strong>
+                09:15
+              </strong>
+
+            </div>
+
+            <div class="appointment-info">
+
+              <strong>
+                Olivia Wilson
+              </strong>
+
+              <small>
+                Follow-up consultation
+              </small>
+
+            </div>
+
+            <span class="pending">
+              PENDING
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= SALES OFFER ================= -->
+
+      <div class="panel sales-panel">
+
+        <span class="pill">
+          EARLY ACCESS
+        </span>
+
+        <h3>
+          Stop losing customers.
+          <span>
+            Start recovering them.
+          </span>
+        </h3>
+
+        <p>
+          Deploy a customized AI lead recovery
+          workflow designed around your business.
+        </p>
+
+
+        <div class="offer-price">
+
+          <small>
+            IMPLEMENTATION
+          </small>
+
+          <strong>
+            $2,997
+          </strong>
+
+          <span>
+            one-time
           </span>
 
         </div>
 
 
-        <div class="analytics-grid">
-
-          <div>
-            <small>
-              MISSED OPPORTUNITIES
-            </small>
-
-            <strong>
-              $12,840
-            </strong>
-          </div>
-
-          <div>
-            <small>
-              RECOVERED VALUE
-            </small>
-
-            <strong>
-              $24,680
-            </strong>
-          </div>
-
-          <div>
-            <small>
-              PROJECTED MONTHLY VALUE
-            </small>
-
-            <strong>
-              $31,420
-            </strong>
-          </div>
-
-          <div>
-            <small>
-              RESPONSE TIME
-            </small>
-
-            <strong>
-              42 sec
-            </strong>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- FOOTER -->
-      <footer>
-
-        LEADRESCUE AI
-
-        <span>•</span>
-
-        Premium sales demo environment
-
-        <span>•</span>
-
-        Sample data only — no real patient information
-
-      </footer>
-
-    </main>
-
-  </div>
-
-
-  <!-- ================= DEMO MODAL ================= -->
-  <div
-    class="modal"
-    id="demoModal"
-  >
-
-    <div class="modal-card">
-
-      <button
-        class="close-modal"
-        id="closeModal"
-      >
-        ×
-      </button>
-
-      <span class="pill">
-        PRIVATE DEMO
-      </span>
-
-      <h2>
-        See how much revenue
-        your business could recover.
-      </h2>
-
-      <p>
-        Request a personalized LEADRESCUE AI
-        walkthrough for your business.
-      </p>
-
-
-      <form id="demoForm">
-
-        <input
-          type="text"
-          placeholder="Business / Clinic Name"
-          required
-        />
-
-        <input
-          type="email"
-          placeholder="Business Email"
-          required
-        />
-
-        <select>
-
-          <option>
-            Select Business Type
-          </option>
-
-          <option>
-            Dental / Healthcare
-          </option>
-
-          <option>
-            Law Firm
-          </option>
-
-          <option>
-            Home Services
-          </option>
-
-          <option>
-            Real Estate
-          </option>
-
-          <option>
-            Other
-          </option>
-
-        </select>
-
-
         <button
-          type="submit"
           class="btn primary full"
+          id="salesDemo"
         >
-          Request My Demo →
+          Request Private Demo →
         </button>
 
-      </form>
 
-
-      <div
-        class="success-message"
-        id="successMessage"
-      >
-
-        ✓ Demo request captured successfully.
-
-        <br>
-
-        <small>
-          Thank you. We'll follow up with the next step.
-        </small>
+        <div class="offer-note">
+          ✓ Custom workflow
+          <br>
+          ✓ Lead recovery automation
+          <br>
+          ✓ Follow-up engine
+        </div>
 
       </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+      LEADRESCUE AI
+
+      <span>•</span>
+
+      AI Revenue Recovery Platform
+
+      <span>•</span>
+
+      Demo uses sample data only
+
+    </footer>
+
+  </main>
+
+</div>
+
+
+<!-- ================= DEMO MODAL ================= -->
+
+<div
+  class="modal"
+  id="demoModal"
+>
+
+  <div class="modal-card">
+
+    <button
+      class="close-modal"
+      id="closeModal"
+    >
+      ×
+    </button>
+
+
+    <span class="pill">
+      PRIVATE DEMO
+    </span>
+
+
+    <h2>
+      See how much revenue
+      your business could recover.
+    </h2>
+
+
+    <p>
+      Tell us about your business and
+      we'll prepare a personalized
+      LEADRESCUE AI walkthrough.
+    </p>
+
+
+    <form id="demoForm">
+
+      <input
+        type="text"
+        name="business"
+        placeholder="Business / Clinic Name"
+        required
+      >
+
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Business Email"
+        required
+      >
+
+
+      <select
+        name="industry"
+        required
+      >
+
+        <option value="">
+          Select Business Type
+        </option>
+
+        <option>
+          Dental / Healthcare
+        </option>
+
+        <option>
+          Law Firm
+        </option>
+
+        <option>
+          Home Services
+        </option>
+
+        <option>
+          Real Estate
+        </option>
+
+        <option>
+          Other
+        </option>
+
+      </select>
+
+
+      <button
+        type="submit"
+        class="btn primary full"
+      >
+        Request My Demo →
+      </button>
+
+    </form>
+
+
+    <div
+      class="success-message"
+      id="successMessage"
+    >
+
+      ✓ Demo request captured.
+
+      <br>
+
+      <small>
+        Thank you. We'll follow up with the next step.
+      </small>
 
     </div>
 
   </div>
 
+</div>
 
-  <script src="script.js"></script>
+
+<script src="script.js"></script>
 
 </body>
-  </html>
+</html>
